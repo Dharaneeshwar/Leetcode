@@ -21,7 +21,7 @@ public:
     }
 };
 
-// Dynamic Programming; Complexity: O(n) ; (0 ms) 
+// Dynamic Programming; Time Complexity: O(n) ; (0 ms) ; Space Complexity : O(n) 
 
 class Solution {
 public:
@@ -40,5 +40,27 @@ public:
             arr[i] = max(arr[i-2]+nums[i],arr[i-1]);
         }
         return arr[len-1];
+    }
+};
+
+// Dynamic Programming; Time Complexity: O(n) ; (0 ms) ; Space Complexity : O(1) (Constant Space)
+
+class Solution {
+public:
+    int rob(vector<int>& nums) {
+        int len = nums.size();
+        if (len==0){
+            return 0;
+        }
+        if (len==1){
+            return nums[0];
+        }
+        int prev = 0,curr = 0;
+        for (int i=0;i<len;i++){
+            int temp = max(prev+nums[i],curr);
+            prev = curr;
+            curr = temp;
+        }
+        return curr;
     }
 };
