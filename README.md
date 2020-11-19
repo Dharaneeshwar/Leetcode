@@ -11,9 +11,7 @@ I like to document my practice sessions in an organised format for future refere
 #### Features
 
 - **Time Complexity & Space Complexity** *- for almost all problems*
-<br>
 - **Explanation Comments** *- for few problems*
-<br>
 - **Mutliple solutions of the same program are provided in the same file** - *Ordered from worse to best*
 
 
