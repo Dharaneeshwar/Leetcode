@@ -10,7 +10,7 @@ I like to document my practice sessions in an organised format for future refere
 
 #### Features
 
-- **Time Complexity** *- for almost all problems*
+- **Time Complexity & Space Complexity** *- for almost all problems*
 - **Explanation Comments** *- for few problems*
 
 
