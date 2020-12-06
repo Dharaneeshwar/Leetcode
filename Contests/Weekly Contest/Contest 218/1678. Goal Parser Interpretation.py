@@ -1,3 +1,4 @@
+# Time Complexity : O(n)
 class Solution:
     def interpret(self, command: str) -> str:
         ind = 0 

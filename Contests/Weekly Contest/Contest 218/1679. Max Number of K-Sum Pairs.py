@@ -1,3 +1,4 @@
+# Time Complexity - O(n log n) ; 32 ms ; log n - sort ; n - traversing
 class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:
         nums.sort() 
