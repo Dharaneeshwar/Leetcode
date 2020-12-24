@@ -15,4 +15,23 @@ class Solution:
                 head = head.next 
         return None        
             
-# TODO Fload Algo 
+# O(1) Space ; Fload Algo 
+
+class Solution:
+    def detectCycle(self, head: ListNode) -> ListNode:
+        if not head:
+            return None
+        if head.next == None:
+            return None
+        slow ,fast = head, head.next 
+        while slow and fast and fast.next:
+            if slow == fast:
+                slow = slow.next 
+                while slow != head:
+                    slow = slow.next 
+                    head = head.next 
+                return head    
+            slow = slow.next 
+            fast = fast.next.next
+        return None
+        
