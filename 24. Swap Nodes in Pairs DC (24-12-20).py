@@ -1,8 +1,4 @@
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+# 24 ms ; faster than 94.70 % ; Time Complexity - O(n)
 class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
         prev, prev.next = ListNode(0), head 
