@@ -12,5 +12,4 @@ class Solution:
         facts = self.get_factors(n)
         if len(facts) < k:
             return -1
-        print(facts)
         return facts[k-1]
