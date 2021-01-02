@@ -1,4 +1,4 @@
-# I wish this algorithm passed all test cases. Unfortunately the final testcase gave TLE
+# TLE
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -11,7 +11,7 @@ class Solution:
         cond = True
         while cond:
             cond = False
-            mini =  999 
+            mini =  float('inf') 
             m_ind = -1
             for ind in range(len(lists)):
                 node = lists[ind]
@@ -29,4 +29,27 @@ class Solution:
                 out = out.next
         return head.next
 
-# TODO An Algorithm that passes
+# using minheap
+
+import heapq
+class Solution(object):
+    def mergeKLists(self, lists):
+        """
+        :type lists: List[ListNode]
+        :rtype: ListNode
+        """
+        head = temp = ListNode(None)
+        heap = [(node.val,ind,node) for ind,node in enumerate(lists) if node]
+        
+        heapq.heapify(heap)
+        
+        while heap:
+            # adding index is the key, because we are passing the node and comparision of node and node is not allowed in python 3
+            # Therefore when there is a duplicate number in all nodes the comparision tries to compare based on node which is not allowed so adding index of the list avoids the comparison of nodes
+            val,ind,node = heapq.heappop(heap)
+            temp.next = ListNode(val)
+            temp = temp.next
+            node = node.next 
+            if node:
+                heapq.heappush(heap,(node.val,ind,node))
+        return head.next         
